@@ -252,6 +252,9 @@ class InputTab(QtWidgets.QWidget):
         self.comboBox_2.setItemText(5, _translate("Input", "Scholarship"))
         self.submitButton.setText(_translate("Input", "Submit"))
 
+        self.cover_file_path = ""
+        self.resume_file_path = ""
+
         self.connect_events()
 
     def connect_events(self):
@@ -269,9 +272,14 @@ class InputTab(QtWidgets.QWidget):
         status = self.CurrentStatusInput.currentText()
         mistakes = self.MistakesInput.toPlainText()
         feedback = self.FeedbackInput.toPlainText()
+        coverPdf = self.cover_file_path
+        resumePdf = self.resume_file_path
+
+        print(type(coverPdf), type(resumePdf))
+        print(coverPdf, resumePdf)
 
         application = Application(status, jobTitle, employmentType, company, jobPosting, link, date,
-                                  coverAdded, coverText, "", "", mistakes, feedback)
+                                  coverAdded, coverText, coverPdf, resumePdf, mistakes, feedback)
         data.add_application_to_data(application)
 
     def select_cover_file(self):
