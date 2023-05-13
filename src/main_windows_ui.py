@@ -38,17 +38,21 @@ class Ui_MainWindow(object):
         self.tabWidget.setMovable(False)
         self.tabWidget.setObjectName("tabWidget")
         
-        #Active Tab
+        #Applications Tab
         self.tab_3 = ActiveTab() #Test Widget
         self.tab_3.setObjectName("tab_3")
         self.tabWidget.addTab(self.tab_3, "")
         
         #Adding Application to table in active
-        self.tab_3.add_application("KPMG", "Intern", "Accepted", "23.07.2022", "LUL")
+        self.tab_3.add_application("KPMG", "Intern", "Active", "23.07.2022", "LUL")
         
         self.tab_3.add_application("Barca", "Intern", "Accepted", "23.07.2022", "LUL")
         
-        self.tab_3.add_application("KPMG", "Intern", "Accepted", "23.07.2022", "LUL")
+        self.tab_3.add_application("KPMG", "Intern", "Active", "23.07.2022", "LUL")
+        
+        self.tab_3.add_application("Messi", "Intern", "Rejected", "24.07.2022", "LUL")
+        
+        self.tab_3.add_application("KFC", "Intern", "Interview", "23.07.2022", "LUL")
         
         
         #New Tab
@@ -83,7 +87,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "Active"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "Applications"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), _translate("MainWindow", "New"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), _translate("MainWindow", "Analyse"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_6), _translate("MainWindow", "Recommendation"))

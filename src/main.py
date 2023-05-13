@@ -15,6 +15,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    app.setStyle("QtCurve")
     win = Window()
     win.show()
     sys.exit(app.exec())

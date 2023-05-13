@@ -18,7 +18,7 @@ class ActiveTab(QtWidgets.QWidget):
         layout = QtWidgets.QVBoxLayout(self)
         
         self.tableWidget = QtWidgets.QTableWidget()
-        self.tableWidget.setGeometry(QtCore.QRect(10, 10, 751, 461))
+        self.tableWidget.setGeometry(QtCore.QRect(10, 50, 751, 461))
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(5)
         self.tableWidget.setRowCount(0)
@@ -47,6 +47,28 @@ class ActiveTab(QtWidgets.QWidget):
         item.setText(_translate("Form", "Feedback"))
         
         layout.addWidget(self.tableWidget)
+        
+        self.checkBox = QtWidgets.QCheckBox()
+        self.checkBox.setGeometry(QtCore.QRect(20, 20, 91, 20))
+        self.checkBox.setObjectName("checkBox")
+        
+        layout.addWidget(self.checkBox)
+        
+        self.checkBox.setText(_translate("Form", "Only Active"))
+        
+        self.checkBox.stateChanged.connect(self.state_changed)
+
+    def state_changed(self):
+        if self.checkBox.isChecked():
+            numRows = self.tableWidget.rowCount()
+            for i in range(numRows):
+                item = self.tableWidget.item(i, 2)  # get the status item in this row
+                if item.text() != "Active" and item.text() != "Interview":
+                    self.tableWidget.setRowHidden(i, True)  # hide the row
+        else:
+            numRows = self.tableWidget.rowCount()
+            for i in range(numRows):
+                self.tableWidget.setRowHidden(i, False)  # show all rows
     
     def add_application(self, company, position, status, date, feedback):
         #Create a empty row at bottom of table
