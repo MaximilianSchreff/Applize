@@ -238,3 +238,5 @@ class InputTab(QtWidgets.QWidget):
         self.comboBox_2.setItemText(4, _translate("Input", "Working Student"))
         self.comboBox_2.setItemText(5, _translate("Input", "Scholarship"))
         self.pushButton.setText(_translate("Input", "Submit"))
+
+        self.

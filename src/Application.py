@@ -7,15 +7,16 @@ class Application():
         self.status = status
         self.date = date
         self.feedback = feedback
+        #ahglsdhgsdgh
         #Boolean ob Anschreiben existiert (in PDF oder Textform)
         self.coverLetterPdf = coverLetterPdf
         self.coverLetterText = coverLetterText
         #Pfade zu den Dateien
-        self.coverletterPdfFile = coverletterPdfFile
+        self.coverLetterPdfFile = coverletterPdfFile
         self.coverLetterTextFile = coverLetterTextFile
         self.cvFile = cvFile
 
     def toCsv(self):
-        return self.company + "," + self.jobTitle + "," + self.jobType + "," + self.jobDescription + "," + self.status + "," + self.date + "," + self.feedback + "," + self.coverLetterPdf + "," + self.coverLetterText + "," + self.coverletterPdfFile + "," + self.coverLetterTextFile + "," + self.cvFile + "\n"
+        return self.company + "," + self.jobTitle + "," + self.jobType + "," + self.jobDescription + "," + self.status + "," + self.date + "," + self.feedback + "," + self.coverLetterPdf + "," + self.coverLetterText + "," + self.coverLetterPdfFile + "," + self.coverLetterTextFile + "," + self.cvFile + "\n"
 
 
