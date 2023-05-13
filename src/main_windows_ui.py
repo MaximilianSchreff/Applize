@@ -12,7 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 from active import ActiveTab
 
-from Input import InputTab
+from InputTab import InputTab
 from analyse import AnalyseTab
 
 class Ui_MainWindow(object):
