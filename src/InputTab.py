@@ -13,7 +13,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import sys
-import Application
+from Application import Application
+from main import applications
 
 
 class InputTab(QtWidgets.QWidget):
@@ -248,18 +249,19 @@ class InputTab(QtWidgets.QWidget):
         self.submitButton.clicked.connect(self.submit)
 
     def submit(self):
-        job_title = self.comboBox.currentText()
-        employment_type = self.comboBox_2.currentText()
+        jobTitle = self.comboBox.currentText()
+        employmentType = self.comboBox_2.currentText()
         company = self.CompanyInput.text()
-        job_posting = self.JobPostingInput.toPlainText()
+        jobPosting = self.JobPostingInput.toPlainText()
         link = self.LinkInput.text()
         date = self.DateInput.date().toPyDate().isoformat()
-        cover_added = self.CoverLetterInput.isChecked()
-        cover_text = self.CoverTextInput.toPlainText()
+        coverAdded = self.CoverLetterInput.isChecked()
+        coverText = self.CoverTextInput.toPlainText()
         status = self.CurrentStatusInput.currentText()
         mistakes = self.MistakesInput.toPlainText()
         feedback = self.FeedbackInput.toPlainText()
 
-        application = Application(company, job_title, job_type, job_posting, status, date,
-                 feedback, "", cover_text, "",
-                 "", "")
+        application = Application(jobTitle, employmentType, company, jobPosting, link, date,
+                                  coverAdded, coverText, "", "", status, mistakes, feedback)
+        self.applications.append(application)
+
