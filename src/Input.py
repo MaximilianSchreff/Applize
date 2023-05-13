@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'active.ui'
+# Form implementation generated from reading ui file 'InputWidget.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -9,17 +9,18 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+##
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QApplication, QMainWindow
+import sys
 
-
-# This is a test Widget which can be used for a tab
-class InputTab(QtWidgets.QWidget):
-    def __init__(self):
-        super().__init__()
-        #layout = QtWidgets.QVBoxLayout(self)
-        
-        self.gridLayout = QtWidgets.QGridLayout(self)
+class InputTab(object):
+    def setupUi(self, Input):
+        Input.setObjectName("Input")
+        Input.resize(564, 379)
+        self.gridLayout = QtWidgets.QGridLayout(Input)
         self.gridLayout.setObjectName("gridLayout")
-        self.scrollArea = QtWidgets.QScrollArea(self)
+        self.scrollArea = QtWidgets.QScrollArea(Input)
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
@@ -188,11 +189,13 @@ class InputTab(QtWidgets.QWidget):
         self.gridLayout_2.addWidget(self.pushButton, 8, 1, 1, 1)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.gridLayout.addWidget(self.scrollArea, 0, 0, 1, 1)
-        
-        QtCore.QMetaObject.connectSlotsByName(self)
-        _translate = QtCore.QCoreApplication.translate
-        
 
+        self.retranslateUi(Input)
+        QtCore.QMetaObject.connectSlotsByName(Input)
+
+    def retranslateUi(self, Input):
+        _translate = QtCore.QCoreApplication.translate
+        Input.setWindowTitle(_translate("Input", "Form"))
         self.ApplicationInput.setTitle(_translate("Input", "Application"))
         self.CoverTextLabel.setText(_translate("Input", "Cover Letter Text"))
         self.ResumeLabel.setText(_translate("Input", "Resume"))
