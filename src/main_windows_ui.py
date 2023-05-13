@@ -11,6 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 from active import ActiveTab
+from Input import InputTab
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -56,7 +57,7 @@ class Ui_MainWindow(object):
         
         
         #New Tab
-        self.tab_4 = QtWidgets.QWidget()
+        self.tab_4 = InputTab()
         self.tab_4.setObjectName("tab_4")
         self.tabWidget.addTab(self.tab_4, "")
         
