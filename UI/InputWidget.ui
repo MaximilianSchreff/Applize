@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Input</class>
+ <widget class="QWidget" name="Input">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>564</width>
+    <height>379</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>527</width>
+        <height>1168</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="1">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="1">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="4" column="1">
+        <spacer name="verticalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="2">
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Preferred</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>30</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="0">
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Preferred</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="9" column="1">
+        <spacer name="verticalSpacer_6">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="7" column="1">
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>30</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="3" column="1">
+        <widget class="QGroupBox" name="ApplicationInput">
+         <property name="title">
+          <string>Application</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <property name="topMargin">
+           <number>20</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>30</number>
+          </property>
+          <item row="8" column="0">
+           <widget class="QLabel" name="CoverTextLabel">
+            <property name="text">
+             <string>Cover Letter Text</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLineEdit" name="JobTitleInput_2">
+            <property name="accessibleDescription">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="0">
+           <widget class="QLabel" name="ResumeLabel">
+            <property name="text">
+             <string>Resume</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0">
+           <widget class="QLabel" name="CoverFileLabel">
+            <property name="text">
+             <string>Cover Letter File</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="QDateEdit" name="DateInput">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>16777215</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="DateLabel">
+            <property name="text">
+             <string>Application Date</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="JobTitleLabel_2">
+            <property name="minimumSize">
+             <size>
+              <width>118</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Job Title</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="2">
+           <widget class="QCheckBox" name="CoverLetterInput">
+            <property name="text">
+             <string>Used</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="CoverLetterLabel">
+            <property name="text">
+             <string>Cover Letter</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="2" colspan="2">
+           <widget class="QPlainTextEdit" name="CoverTextInput">
+            <property name="accessibleDescription">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="3">
+           <widget class="QPushButton" name="DateTodayButton">
+            <property name="text">
+             <string>Today</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QGroupBox" name="StatusInput">
+         <property name="title">
+          <string>Status</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <property name="topMargin">
+           <number>20</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>30</number>
+          </property>
+          <item row="7" column="0">
+           <widget class="QLabel" name="FeedbackLabel">
+            <property name="text">
+             <string>Feedback</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1" colspan="2">
+           <widget class="QPlainTextEdit" name="FeedbackInput">
+            <property name="accessibleDescription">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QPlainTextEdit" name="MistakesInput"/>
+          </item>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="CurrentStatusInput">
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Application Send</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Interview Invite</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Decline</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Offer</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="MistakesLabel">
+            <property name="text">
+             <string>Own Mistakes</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="CurrentStatusLabel">
+            <property name="minimumSize">
+             <size>
+              <width>118</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Current Status</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QGroupBox" name="JobInput">
+         <property name="title">
+          <string>Job Info</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <property name="topMargin">
+           <number>20</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>30</number>
+          </property>
+          <item row="9" column="1">
+           <widget class="QLineEdit" name="LinkInput"/>
+          </item>
+          <item row="8" column="1" colspan="2">
+           <widget class="QPlainTextEdit" name="JobPostingInput">
+            <property name="accessibleDescription">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="JobTitleLabel">
+            <property name="text">
+             <string>Job Title</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="EmploymentTypeLabel">
+            <property name="text">
+             <string>Type of Employment</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="CompanyLabel">
+            <property name="text">
+             <string>Company / Organization</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0">
+           <widget class="QLabel" name="LinkLabel">
+            <property name="text">
+             <string>Job Posting Link</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="CompanyInput"/>
+          </item>
+          <item row="8" column="0">
+           <widget class="QLabel" name="JobPostingLabel">
+            <property name="text">
+             <string>Job Posting</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="comboBox">
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Other</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Full-Stack Developer</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Backend Developer</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Frontend Developer</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Web Developer</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Data Scientist</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Data Analyst</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>DevOps Engineer</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Mobile App Developer</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Consultant</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Project Manager</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Researcher</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ML Engineer</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>QA Engineer</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QComboBox" name="comboBox_2">
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Other</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Full-Time</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Part-Time</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Intership</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Working Student</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Scholarship</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>Submit</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
