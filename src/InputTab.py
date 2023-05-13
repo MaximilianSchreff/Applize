@@ -62,9 +62,19 @@ class InputTab(QtWidgets.QWidget):
         self.ResumeLabel = QtWidgets.QLabel(self.ApplicationInput)
         self.ResumeLabel.setObjectName("ResumeLabel")
         self.gridLayout_4.addWidget(self.ResumeLabel, 10, 0, 1, 1)
+        
+        self.ResumeGetFileButton = QtWidgets.QPushButton('Select Resume File', self)
+        self.ResumeGetFileButton.clicked.connect(self.select_resume_file)
+        self.gridLayout_4.addWidget(self.ResumeGetFileButton, 10, 2, 1, 1)
+        
         self.CoverFileLabel = QtWidgets.QLabel(self.ApplicationInput)
         self.CoverFileLabel.setObjectName("CoverFileLabel")
         self.gridLayout_4.addWidget(self.CoverFileLabel, 9, 0, 1, 1)
+        
+        self.CoverGetFileButton = QtWidgets.QPushButton('Select Cover Letter File', self)
+        self.CoverGetFileButton.clicked.connect(self.select_cover_file)
+        self.gridLayout_4.addWidget(self.CoverGetFileButton, 9, 2, 1, 1)
+        
         self.DateInput = QtWidgets.QDateEdit(self.ApplicationInput)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -263,3 +273,10 @@ class InputTab(QtWidgets.QWidget):
         application = Application(status, jobTitle, employmentType, company, jobPosting, link, date,
                                   coverAdded, coverText, "", "", mistakes, feedback)
         data.add_application_to_data(application)
+
+    def select_cover_file(self):
+        self.cover_file_path, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'Select File')
+    
+    def select_resume_file(self):
+        self.resume_file_path, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'Select File')
+        
