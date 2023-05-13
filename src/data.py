@@ -1,6 +1,7 @@
 import os.path
 import pandas as pd
 from Application import Application
+import numpy as np
 
 
 def create_file_system():
@@ -45,10 +46,19 @@ def load_applications_from_csv():
     app_df = pd.read_csv(csv_path, sep=";")
 
     for i in range(app_df.shape[0]):
-        new_app = Application(app_df.loc[i, "status"], app_df.loc[i, "title"], app_df.loc[i, "employmentType"], app_df.loc[i, "company"],
-                              app_df.loc[i, "jobPosting"], app_df.loc[i, "link"], app_df.loc[i, "date"], app_df.loc[i, "coverAdded"],
-                              app_df.loc[i, "coverText"], app_df.loc[i, "coverPdf"], app_df.loc[i, "resumePdf"], app_df.loc[i, "mistakes"],
-                              app_df.loc[i, "feedback"])
+        new_app = Application("" if pd.isna(app_df.loc[i, "status"]) else app_df.loc[i, "status"],
+                              "" if pd.isna(app_df.loc[i, "title"]) else app_df.loc[i, "title"],
+                              "" if pd.isna(app_df.loc[i, "employmentType"]) else app_df.loc[i, "employmentType"],
+                              "" if pd.isna(app_df.loc[i, "company"]) else app_df.loc[i, "company"],
+                              "" if pd.isna(app_df.loc[i, "jobPosting"]) else app_df.loc[i, "jobPosting"],
+                              "" if pd.isna(app_df.loc[i, "link"]) else app_df.loc[i, "link"],
+                              "" if pd.isna(app_df.loc[i, "date"]) else app_df.loc[i, "date"],
+                              "" if pd.isna(app_df.loc[i, "coverAdded"]) else app_df.loc[i, "coverAdded"],
+                              "" if pd.isna(app_df.loc[i, "coverText"]) else app_df.loc[i, "coverText"],
+                              "" if pd.isna(app_df.loc[i, "coverPdf"]) else app_df.loc[i, "coverPdf"],
+                              "" if pd.isna(app_df.loc[i, "resumePdf"]) else app_df.loc[i, "resumePdf"],
+                              "" if pd.isna(app_df.loc[i, "mistakes"]) else app_df.loc[i, "mistakes"],
+                              "" if pd.isna(app_df.loc[i, "feedback"]) else app_df.loc[i, "feedback"])
         applications.append(new_app)
 
 
