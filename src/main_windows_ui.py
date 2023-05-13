@@ -11,6 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 from active import ActiveTab
+from analyse import AnalyseTab
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -61,7 +62,7 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.tab_4, "")
         
         #Analyse
-        self.tab_5 = QtWidgets.QWidget()
+        self.tab_5 = AnalyseTab()
         self.tab_5.setObjectName("tab_5")
         self.tabWidget.addTab(self.tab_5, "")
         
