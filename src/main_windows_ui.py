@@ -14,6 +14,7 @@ from active import ActiveTab
 
 from InputTab import InputTab
 from analyse import AnalyseTab
+from recommend import RecommendTab
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -69,7 +70,7 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.tab_5, "")
         
         #Recommendation
-        self.tab_6 = QtWidgets.QWidget()
+        self.tab_6 = RecommendTab()
         self.tab_6.setObjectName("tab_6")
         self.tabWidget.addTab(self.tab_6, "")
         
