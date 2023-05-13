@@ -13,8 +13,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import sys
+import Application
+
 
 class InputTab(QtWidgets.QWidget):
+
     def __init__(self):
         super().__init__()
         self.setObjectName("Input")
@@ -52,10 +55,10 @@ class InputTab(QtWidgets.QWidget):
         self.CoverTextLabel = QtWidgets.QLabel(self.ApplicationInput)
         self.CoverTextLabel.setObjectName("CoverTextLabel")
         self.gridLayout_4.addWidget(self.CoverTextLabel, 8, 0, 1, 1)
-        self.JobTitleInput_2 = QtWidgets.QLineEdit(self.ApplicationInput)
-        self.JobTitleInput_2.setAccessibleDescription("")
-        self.JobTitleInput_2.setObjectName("JobTitleInput_2")
-        self.gridLayout_4.addWidget(self.JobTitleInput_2, 1, 2, 1, 1)
+        # self.JobTitleInput_2 = QtWidgets.QLineEdit(self.ApplicationInput)
+        # self.JobTitleInput_2.setAccessibleDescription("")
+        # self.JobTitleInput_2.setObjectName("JobTitleInput_2")
+        # self.gridLayout_4.addWidget(self.JobTitleInput_2, 1, 2, 1, 1)
         self.ResumeLabel = QtWidgets.QLabel(self.ApplicationInput)
         self.ResumeLabel.setObjectName("ResumeLabel")
         self.gridLayout_4.addWidget(self.ResumeLabel, 10, 0, 1, 1)
@@ -75,10 +78,10 @@ class InputTab(QtWidgets.QWidget):
         self.DateLabel = QtWidgets.QLabel(self.ApplicationInput)
         self.DateLabel.setObjectName("DateLabel")
         self.gridLayout_4.addWidget(self.DateLabel, 3, 0, 1, 1)
-        self.JobTitleLabel_2 = QtWidgets.QLabel(self.ApplicationInput)
-        self.JobTitleLabel_2.setMinimumSize(QtCore.QSize(118, 0))
-        self.JobTitleLabel_2.setObjectName("JobTitleLabel_2")
-        self.gridLayout_4.addWidget(self.JobTitleLabel_2, 1, 0, 1, 1)
+        # self.JobTitleLabel_2 = QtWidgets.QLabel(self.ApplicationInput)
+        # self.JobTitleLabel_2.setMinimumSize(QtCore.QSize(118, 0))
+        # self.JobTitleLabel_2.setObjectName("JobTitleLabel_2")
+        # self.gridLayout_4.addWidget(self.JobTitleLabel_2, 1, 0, 1, 1)
         self.CoverLetterInput = QtWidgets.QCheckBox(self.ApplicationInput)
         self.CoverLetterInput.setObjectName("CoverLetterInput")
         self.gridLayout_4.addWidget(self.CoverLetterInput, 6, 2, 1, 1)
@@ -185,9 +188,9 @@ class InputTab(QtWidgets.QWidget):
         self.comboBox_2.addItem("")
         self.gridLayout_3.addWidget(self.comboBox_2, 2, 1, 1, 1)
         self.gridLayout_2.addWidget(self.JobInput, 1, 1, 1, 1)
-        self.pushButton = QtWidgets.QPushButton(self.scrollAreaWidgetContents)
-        self.pushButton.setObjectName("pushButton")
-        self.gridLayout_2.addWidget(self.pushButton, 8, 1, 1, 1)
+        self.submitButton = QtWidgets.QPushButton(self.scrollAreaWidgetContents)
+        self.submitButton.setObjectName("submitButton")
+        self.gridLayout_2.addWidget(self.submitButton, 8, 1, 1, 1)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.gridLayout.addWidget(self.scrollArea, 0, 0, 1, 1)
 
@@ -199,15 +202,15 @@ class InputTab(QtWidgets.QWidget):
         self.ResumeLabel.setText(_translate("Input", "Resume"))
         self.CoverFileLabel.setText(_translate("Input", "Cover Letter File"))
         self.DateLabel.setText(_translate("Input", "Application Date"))
-        self.JobTitleLabel_2.setText(_translate("Input", "Job Title"))
+        # self.JobTitleLabel_2.setText(_translate("Input", "Job Title"))
         self.CoverLetterInput.setText(_translate("Input", "Used"))
         self.CoverLetterLabel.setText(_translate("Input", "Cover Letter"))
         self.DateTodayButton.setText(_translate("Input", "Today"))
         self.StatusInput.setTitle(_translate("Input", "Status"))
         self.FeedbackLabel.setText(_translate("Input", "Feedback"))
-        self.CurrentStatusInput.setItemText(0, _translate("Input", "Application Send"))
+        self.CurrentStatusInput.setItemText(0, _translate("Input", "Application Sent"))
         self.CurrentStatusInput.setItemText(1, _translate("Input", "Interview Invite"))
-        self.CurrentStatusInput.setItemText(2, _translate("Input", "Decline"))
+        self.CurrentStatusInput.setItemText(2, _translate("Input", "Declined"))
         self.CurrentStatusInput.setItemText(3, _translate("Input", "Offer"))
         self.MistakesLabel.setText(_translate("Input", "Own Mistakes"))
         self.CurrentStatusLabel.setText(_translate("Input", "Current Status"))
@@ -237,6 +240,26 @@ class InputTab(QtWidgets.QWidget):
         self.comboBox_2.setItemText(3, _translate("Input", "Intership"))
         self.comboBox_2.setItemText(4, _translate("Input", "Working Student"))
         self.comboBox_2.setItemText(5, _translate("Input", "Scholarship"))
-        self.pushButton.setText(_translate("Input", "Submit"))
+        self.submitButton.setText(_translate("Input", "Submit"))
 
-        self.
+        self.connect_events()
+
+    def connect_events(self):
+        self.submitButton.clicked.connect(self.submit)
+
+    def submit(self):
+        job_title = self.comboBox.currentText()
+        employment_type = self.comboBox_2.currentText()
+        company = self.CompanyInput.text()
+        job_posting = self.JobPostingInput.toPlainText()
+        link = self.LinkInput.text()
+        date = self.DateInput.date().toPyDate().isoformat()
+        cover_added = self.CoverLetterInput.isChecked()
+        cover_text = self.CoverTextInput.toPlainText()
+        status = self.CurrentStatusInput.currentText()
+        mistakes = self.MistakesInput.toPlainText()
+        feedback = self.FeedbackInput.toPlainText()
+
+        application = Application(company, job_title, job_type, job_posting, status, date,
+                 feedback, "", cover_text, "",
+                 "", "")

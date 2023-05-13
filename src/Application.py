@@ -1,22 +1,30 @@
-class Application():
-    def __init__(self, company, jobTitle, jobType, jobDescription, status, date, feedback, coverLetterPdf, coverLetterText, coverletterPdfFile, coverLetterTextFile, cvFile):
-        self.company = company
+
+class Application:
+    def __init__(self, jobTitle, employmentType, company, jobPosting, link, date,
+                 coverAdded, coverText, coverPdf, resumePdf, status, mistakes, feedback):
+        # job info
         self.jobTitle = jobTitle
-        self.jobType = jobType
-        self.jobDescription = jobDescription
-        self.status = status
+        self.employmentType = employmentType
+        self.company = company
+        self.jobPosting = jobPosting
+        self.link = link
+
+        # application info
         self.date = date
+        self.coverAdded = coverAdded
+        self.coverText = coverText
+        # file paths
+        self.coverPdf = coverPdf
+        self.resumePdf = resumePdf
+
+        # application overhead
+        self.status = status
+        self.mistakes = mistakes
         self.feedback = feedback
-        #ahglsdhgsdgh
-        #Boolean ob Anschreiben existiert (in PDF oder Textform)
-        self.coverLetterPdf = coverLetterPdf
-        self.coverLetterText = coverLetterText
-        #Pfade zu den Dateien
-        self.coverLetterPdfFile = coverletterPdfFile
-        self.coverLetterTextFile = coverLetterTextFile
-        self.cvFile = cvFile
 
     def toCsv(self):
-        return self.company + "," + self.jobTitle + "," + self.jobType + "," + self.jobDescription + "," + self.status + "," + self.date + "," + self.feedback + "," + self.coverLetterPdf + "," + self.coverLetterText + "," + self.coverLetterPdfFile + "," + self.coverLetterTextFile + "," + self.cvFile + "\n"
+        return self.company + "," + self.jobTitle + "," + self.employmentType + "," + self.jobPosting + "," + \
+               self.status + "," + self.date + "," + self.feedback + "," + self.coverPdf + "," + \
+               self.coverText + "," + self.resumePdf + "\n"
 
 
