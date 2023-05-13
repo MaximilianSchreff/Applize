@@ -13,8 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import sys
-from Application import Application
-from main import applications
+from Application import Application, applications
 
 
 class InputTab(QtWidgets.QWidget):
@@ -263,5 +262,5 @@ class InputTab(QtWidgets.QWidget):
 
         application = Application(jobTitle, employmentType, company, jobPosting, link, date,
                                   coverAdded, coverText, "", "", status, mistakes, feedback)
-        self.applications.append(application)
+        applications.append(application)
 

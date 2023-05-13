@@ -11,10 +11,10 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 from active import ActiveTab
-
 from InputTab import InputTab
 from analyse import AnalyseTab
 from recommend import RecommendTab
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):

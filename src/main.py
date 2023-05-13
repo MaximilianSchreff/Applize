@@ -12,8 +12,11 @@ class Window(QMainWindow, Ui_MainWindow):
         super().__init__(parent)
         self.setupUi(self)
 
-
 applications = []
+
+def get_applications():
+    return applications
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setStyle("QtCurve")

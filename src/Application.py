@@ -28,4 +28,5 @@ class Application:
                ";" + self.link + ";" + self.date + ";" + self.coverAdded + ";" + self.coverText + ";" + \
                self.coverPdf + ";" + self.resumePdf + self.mistakes + self.feedback + "\n"
 
+applications = []
 
