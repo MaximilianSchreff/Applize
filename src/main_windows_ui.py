@@ -46,6 +46,10 @@ class Ui_MainWindow(object):
         #Adding Application to table in active
         self.tab_3.add_application("KPMG", "Intern", "Accepted", "23.07.2022", "LUL")
         
+        self.tab_3.add_application("Barca", "Intern", "Accepted", "23.07.2022", "LUL")
+        
+        self.tab_3.add_application("KPMG", "Intern", "Accepted", "23.07.2022", "LUL")
+        
         
         #New Tab
         self.tab_4 = QtWidgets.QWidget()
