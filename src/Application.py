@@ -1,8 +1,7 @@
 
 class Application:
-    def __init__(self, jobTitle, employmentType, company, jobPosting, link,
-                 date, coverAdded, coverText, coverPdf, resumePdf, status,
-                 mistakes, feedback):
+    def __init__(self, status, jobTitle, employmentType, company, jobPosting, link,
+                 date, coverAdded, coverText, coverPdf, resumePdf, mistakes, feedback):
         # job info
         self.jobTitle = jobTitle
         self.employmentType = employmentType
@@ -22,11 +21,3 @@ class Application:
         self.status = status
         self.mistakes = mistakes
         self.feedback = feedback
-
-    def to_csv(self):
-        return self.status + self.jobTitle + ";" + self.employmentType + ";" + self.company + ";" + self.jobPosting + \
-               ";" + self.link + ";" + self.date + ";" + self.coverAdded + ";" + self.coverText + ";" + \
-               self.coverPdf + ";" + self.resumePdf + self.mistakes + self.feedback + "\n"
-
-applications = []
-
