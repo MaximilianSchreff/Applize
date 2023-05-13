@@ -12,9 +12,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 ##
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow
-import sys
 from Application import Application
-from main import applications
+import data
 
 
 class InputTab(QtWidgets.QWidget):
@@ -261,7 +260,6 @@ class InputTab(QtWidgets.QWidget):
         mistakes = self.MistakesInput.toPlainText()
         feedback = self.FeedbackInput.toPlainText()
 
-        application = Application(jobTitle, employmentType, company, jobPosting, link, date,
-                                  coverAdded, coverText, "", "", status, mistakes, feedback)
-        self.applications.append(application)
-
+        application = Application(status, jobTitle, employmentType, company, jobPosting, link, date,
+                                  coverAdded, coverText, "", "", mistakes, feedback)
+        data.add_application_to_data(application)

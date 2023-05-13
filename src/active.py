@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from Application import Application
 
 
 # This is a test Widget which can be used for a tab
@@ -63,22 +64,25 @@ class ActiveTab(QtWidgets.QWidget):
             numRows = self.tableWidget.rowCount()
             for i in range(numRows):
                 item = self.tableWidget.item(i, 2)  # get the status item in this row
-                if item.text() != "Active" and item.text() != "Interview":
+                if item.text() != "Application Sent" and item.text() != "Interview Invite":
                     self.tableWidget.setRowHidden(i, True)  # hide the row
         else:
             numRows = self.tableWidget.rowCount()
             for i in range(numRows):
                 self.tableWidget.setRowHidden(i, False)  # show all rows
     
-    def add_application(self, company, position, status, date, feedback):
-        #Create a empty row at bottom of table
+    def add_application(self, application: Application):
+        # Create a empty row at bottom of table
         numRows = self.tableWidget.rowCount()
         self.tableWidget.insertRow(numRows)     
-        #Add text to the row
-        self.tableWidget.setItem(numRows, 0, QtWidgets.QTableWidgetItem(company))
-        self.tableWidget.setItem(numRows, 1, QtWidgets.QTableWidgetItem(position))
-        self.tableWidget.setItem(numRows, 2, QtWidgets.QTableWidgetItem(status))
-        self.tableWidget.setItem(numRows, 3, QtWidgets.QTableWidgetItem(date))
-        self.tableWidget.setItem(numRows, 4, QtWidgets.QTableWidgetItem(feedback))
-        
-        return
+        # Add text to the row
+        self.tableWidget.setItem(numRows, 0, QtWidgets.QTableWidgetItem(application.company))
+        self.tableWidget.setItem(numRows, 1, QtWidgets.QTableWidgetItem(
+            application.jobTitle + " - " + application.employmentType))
+        self.tableWidget.setItem(numRows, 2, QtWidgets.QTableWidgetItem(application.status))
+        self.tableWidget.setItem(numRows, 3, QtWidgets.QTableWidgetItem(application.date))
+        self.tableWidget.setItem(numRows, 4, QtWidgets.QTableWidgetItem(application.link))
+
+    def load_app_list(self, applications):
+        for application in applications:
+            self.add_application(application)

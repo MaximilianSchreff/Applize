@@ -11,9 +11,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 from active import ActiveTab
-
 from InputTab import InputTab
 from analyse import AnalyseTab
+from recommend import RecommendTab
+from data import applications
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -41,22 +43,17 @@ class Ui_MainWindow(object):
         self.tabWidget.setMovable(False)
         self.tabWidget.setObjectName("tabWidget")
         
-        #Applications Tab
-        self.tab_3 = ActiveTab() #Test Widget
+        # Applications Tab
+        self.tab_3 = ActiveTab()  # Test Widget
         self.tab_3.setObjectName("tab_3")
         self.tabWidget.addTab(self.tab_3, "")
-        
-        #Adding Application to table in active
-        self.tab_3.add_application("KPMG", "Intern", "Active", "23.07.2022", "LUL")
-        
-        self.tab_3.add_application("Barca", "Intern", "Accepted", "23.07.2022", "LUL")
-        
-        self.tab_3.add_application("KPMG", "Intern", "Active", "23.07.2022", "LUL")
-        
-        self.tab_3.add_application("Messi", "Intern", "Rejected", "24.07.2022", "LUL")
-        
-        self.tab_3.add_application("KFC", "Intern", "Interview", "23.07.2022", "LUL")
-        
+        self.tab_3.load_app_list(applications)
+        # Adding Application to table in active
+        # self.tab_3.add_application("KPMG", "Intern", "Active", "23.07.2022", "LUL")
+        # self.tab_3.add_application("Barca", "Intern", "Accepted", "23.07.2022", "LUL")
+        # self.tab_3.add_application("KPMG", "Intern", "Active", "23.07.2022", "LUL")
+        # self.tab_3.add_application("Messi", "Intern", "Rejected", "24.07.2022", "LUL")
+        # self.tab_3.add_application("KFC", "Intern", "Interview", "23.07.2022", "LUL")
         
         #New Tab
         self.tab_4 = InputTab()
@@ -69,7 +66,7 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.tab_5, "")
         
         #Recommendation
-        self.tab_6 = QtWidgets.QWidget()
+        self.tab_6 = RecommendTab()
         self.tab_6.setObjectName("tab_6")
         self.tabWidget.addTab(self.tab_6, "")
         
