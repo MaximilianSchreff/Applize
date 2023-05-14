@@ -87,7 +87,7 @@ class AnalyseTab(QtWidgets.QWidget):
         plt.figure()
         csfont = {'fontname': 'Arial'}
         print(status.value_counts())
-        status.value_counts().plot(kind='pie', figsize=(8, 4), autopct='%1.0f%%')
+        status.value_counts().plot(kind='pie', figsize=(8, 4), autopct='%1.0f%%', label='')
         plt.title('All-Time Overview', **csfont)
         plt.savefig('../data/plot1.png', bbox_inches='tight')
 
