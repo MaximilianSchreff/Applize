@@ -41,26 +41,35 @@ class Ui_MainWindow(object):
         font.setPointSize(12)
         self.tabWidget.setFont(font)
         self.tabWidget.setObjectName("tabWidget")
-        self.tab = QtWidgets.QWidget()
-        self.tab.setObjectName("tab")
+
+        # Applications Tab
+        self.tab_1 = ActiveTab()  # Test Widget
+        self.tab_1.setObjectName("tab_1")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/icons/Icons/archive.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.tabWidget.addTab(self.tab, icon, "")
-        self.tab_2 = QtWidgets.QWidget()
+        self.tabWidget.addTab(self.tab_1, icon, "")
+
+        # Add New Tap
+        self.tab_2 = InputTab()
         self.tab_2.setObjectName("tab_2")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/icons/Icons/file-plus.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.tabWidget.addTab(self.tab_2, icon1, "")
-        self.tab_3 = QtWidgets.QWidget()
+
+        # Insights Tab
+        self.tab_3 = AnalyseTab()
         self.tab_3.setObjectName("tab_3")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap(":/icons/Icons/bar-chart-2.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.tabWidget.addTab(self.tab_3, icon2, "")
-        self.tab_4 = QtWidgets.QWidget()
+
+        # Analysis
+        self.tab_4 = RecommendTab()
         self.tab_4.setObjectName("tab_4")
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap(":/icons/Icons/crosshair.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.tabWidget.addTab(self.tab_4, icon3, "")
+
         self.verticalLayout_2.addWidget(self.tabWidget)
         self.verticalLayout.addWidget(self.frame)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -75,9 +84,17 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Applications"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_1), _translate("MainWindow", "Applications"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "Add New"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "Insights"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), _translate("MainWindow", "Analysis"))
         self.toolBar.setWindowTitle(_translate("MainWindow", "toolBar"))
+
+    def tab_clicked(self):
+        #Check ha tab_5 is selected
+        if self.tabWidget.currentIndex() == 2:
+            print("Analyse tab selected")
+            self.tab_5.clicked()
+        #messi goat
+
 import iqons_rc
