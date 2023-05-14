@@ -150,7 +150,7 @@ class RecommendTab(QtWidgets.QWidget):
                         embedding3 = self.model.encode(job_posting, convert_to_tensor=True)
                         temp = util.pytorch_cos_sim(embedding2, embedding3)
                         temp = temp.item() * 100
-                        temp = temp if status[i] == "Offer" else -temp
+                        temp = temp if status[i] == "Offer" else -abs(temp)
                         average_score += temp
 
                 average_score /= len(job_postings)
