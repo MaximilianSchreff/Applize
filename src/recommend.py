@@ -33,7 +33,11 @@ class RecommendTab(QtWidgets.QWidget):
 
         
         self.label = QtWidgets.QLabel(self)
+
         self.label.setGeometry(QtCore.QRect(370, 510, 200, 31))
+
+        self.label.setGeometry(QtCore.QRect(390, 510, 120, 31))
+
         self.font = QtGui.QFont()
         self.font.setFamily("Impact")
         self.font.setPointSize(22)
@@ -45,15 +49,26 @@ class RecommendTab(QtWidgets.QWidget):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self)
+
         self.label_2.setGeometry(QtCore.QRect(420, 540, 91, 41))
+
+        self.label_2.setGeometry(QtCore.QRect(430, 540, 91, 41))
+
         self.font = QtGui.QFont()
         self.font.setFamily("Impact")
         self.font.setPointSize(20)
         self.label_2.setFont(self.font)
+
         self.label_2.setObjectName("label_2")
         
         self.label_5 = QtWidgets.QLabel(self)
         self.label_5.setGeometry(QtCore.QRect(570, 510, 200, 31))
+
+        self.label_2.setObjectName("label_")
+
+        self.label_5 = QtWidgets.QLabel(self)
+        self.label_5.setGeometry(QtCore.QRect(570, 510, 120, 31))
+
         self.font = QtGui.QFont()
         self.font.setFamily("Impact")
         self.font.setPointSize(22)
@@ -65,14 +80,17 @@ class RecommendTab(QtWidgets.QWidget):
         self.label_5.setAlignment(QtCore.Qt.AlignCenter)
         self.label_5.setObjectName("label_5")
         self.label_6 = QtWidgets.QLabel(self)
+
         self.label_6.setGeometry(QtCore.QRect(620, 540, 400, 41))
+
+        self.label_6.setGeometry(QtCore.QRect(610, 540, 91, 41))
+
         self.font = QtGui.QFont()
         self.font.setFamily("Impact")
         self.font.setPointSize(20)
         self.label_6.setFont(self.font)
         self.label_6.setObjectName("label_6")
-        
-        
+
         self.label_3 = QtWidgets.QLabel(self)
         self.label_3.setGeometry(QtCore.QRect(180, 440, 181, 41))
         self.font = QtGui.QFont()
@@ -99,6 +117,8 @@ class RecommendTab(QtWidgets.QWidget):
         
         self.label_3.setText(self._translate("Form", "YOUR CV TEXT"))
         self.label_4.setText(self._translate("Form", "JOB DESCRIPTION"))
+        self.label_5.setText(self._translate("Form", "0%"))
+        self.label_6.setText(self._translate("Form", "MATCHING WITH PAST JOB POSTINGS"))
         
         #Button clicked
         self.pushButton.clicked.connect(self.state_changed)
@@ -137,3 +157,4 @@ class RecommendTab(QtWidgets.QWidget):
                 self.label_5.setText(self._translate("Form", "Score: "+str(round(average_score,2))))
         
         self.label.setText(self._translate("Form", "Score: "+str(round(cosine_scores,2))))
+        self.label.setText(self._translate("Form", str(round(cosine_scores,2))+"%"))
