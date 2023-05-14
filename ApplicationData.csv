@@ -1,0 +1,65 @@
+;status;title;employmentType;company;jobPosting;link;date;coverAdded;coverText;coverPdf;resumePdf;mistakes;feedback
+0;Offer;DevOps Engineer;Full-Time;JPMorgan Chase Bank, N.A.;;https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210413391/?utm_medium=jobshare&src=Indeed;01.02.23;True;"Dear Hiring Manager,
+
+I am excited to apply for the DevOps Engineer position at JP Morgan, as advertised on your website. With over 5 years of applied experience in DevOps and a formal training certification, I am confident that my technical expertise and leadership skills make me a strong candidate for this role.
+
+As a DevOps Engineer, I have a proven track record of executing creative solutions and technical troubleshooting. I pride myself on thinking beyond routine or conventional approaches to build solutions or break down technical problems. My hands-on practical experience with Jenkins, Java, Microservices, and JKP, coupled with my advanced knowledge in automation tools and infrastructure support, allow me to develop secure and high-quality production code. I am also adept at reviewing and debugging code written by others, and identifying opportunities to eliminate or automate remediation of recurring issues to improve overall operational stability of software applications and systems.
+
+In addition to my technical abilities, I have a strong skill set in leading team members through technical processes. I am passionate about driving communities of practice across DevOps to promote awareness and use of new and leading-edge technologies. I enjoy leading evaluation sessions with external vendors, startups, and internal teams to drive outcomes-oriented probing of architectural designs, technical credentials, and applicability for use within existing systems and information architecture. Furthermore, I am committed to adding to team culture of diversity, equity, inclusion, and respect.
+
+I am proficient in automation and continuous delivery methods, and I am excited to learn more about the cloud technologies, specifically AWS, which is a preferred qualification for this role.
+
+Thank you for your consideration. I am eager to bring my skills, experience, and passion to your team and contribute to the continued success of JP Morgan.
+
+Sincerely,
+[Your Name]";;path/to/resume1.pdf;forgot to change the name in the cover letter;They said the interview was very good
+1;Decline;Full-Stack Developer;Full-Time;Liberty Mutual;;https://app.eightfold.ai/careers/job/618490998981?domain=libertymutual.com&utm_source=indeed&microsite=https://libertymutual.eightfold.ai/careers&mode=job&iis=Job+Board&iisn=Indeed+Organic;23.03.23;False;;;path/to/resume1.pdf;No cover letter;
+2;Application Send;Data Scientist;Full-Time;University of Arizona;;https://arizona.csod.com/ux/ats/careersite/4/home/requisition/14071?c=arizona;03.03.23;True;"Dear Hiring Manager,
+
+I am writing to express my interest in the Scientific Programmer position at the Division of Agriculture, Life, & Veterinary Sciences, and Cooperative Extension (ALVSCE). With my extensive experience in scientific programming and data analysis, I am confident that I can make significant contributions to elevate the data science capacity and research in your division.
+
+I have a Master's degree in Computer Science and over eight years of experience in scientific programming, data analysis, and machine learning. In my current role, I have developed and deployed analytical pipelines, followed and demonstrated best practices in scientific computing, data and code management, documentation, and digital forms of communication. I have also collaborated with researchers to enable new computational methods and provided computational, statistical, and domain expertise for larger, externally funded projects.
+
+Furthermore, I have experience in teaching scientists new skills and developing and delivering workshops and related training materials on computational science and data science. I am excited about the opportunity to work with the CCT Data Science team and offer training to researchers in the form of workshops and short courses and one-on-one help through office hours.
+
+In addition, I am committed to promoting diversity, equity, and inclusivity initiatives on campus, and I have experience working collaboratively in a team. I hold a deep passion for research and publication, and I am willing to contribute to or lead grants and publish manuscripts.
+
+I am confident that I can meet and exceed the responsibilities outlined in the job description, including developing reproducible analyses, scalable workflows or software, applying and interpreting statistical models, developing APIs, dashboards, databases, and visualizations, and aiding in the interpretation of results. Curating and managing data are among my strong suits.
+
+Thank you for considering my application. I look forward to discussing my qualifications in further detail.
+
+Sincerely,
+[Your Name]";path/to/cover1.pdf;;;
+3;Decline;Data Scientist;Part-Time;Booz Allen Hamilton;;https://careers.boozallen.com/jobs/JobDetail/Fort-Shafter-Data-Scientist-R0171322/79262?source=JB-14400;09.04.23;False;;;path/to/resume2.pdf;;
+4;Interview Invite;Data Scientist;Full-Time;Walmart;;;05.04.23;True;;path/to/cover2.pdf;path/to/resume3.pdf;too less focus on position in cover letter;
+5;Interview Invite;Frontend Developer;Full-Time;Barclays;;;24.04.23;True;"Dear Hiring Manager,
+
+I am writing to express my interest in the position of React Developer at Barclays. I came across this opportunity on your company's career portal and was immediately drawn to the challenging job responsibilities and the cutting-edge technology stack that you are working with.
+
+With over five years of experience in software development, I have a strong foundation in object-oriented programming, data modeling, and design patterns. My experience in building scalable web applications using React, Redux, Webpack, and related technologies will enable me to contribute effectively to your team. I have developed and deployed complex web applications that required a strong understanding of HTML, CSS, LESS, SASS, bootstrap, and browser compatibility.
+
+I am well-versed in TypeScript, JavaScript, and ES6 and have an eye for detail when it comes to writing efficient regression and unit test cases. I am confident that I will be able to capture functional requirements by effectively communicating with business teams and leads in the US and India. I also possess good logical reasoning, problem-solving, and performance tuning skills, which will be an asset in executing my responsibilities.
+
+In addition to my technical skills, I am a strong team player and have collaborated effectively with cross-functional teams in the past. I am committed to providing timely status updates to stakeholders and proactively participating in support activities for the production.
+
+I am excited about the opportunity to contribute to the maturity of DevOps on the application and to learn new technologies such as Angular JS, Java 8/Spring, and MS-SQL, which I believe will help me grow both professionally and personally.
+
+Thank you for considering my application. I look forward to hearing from you soon.
+
+Sincerely,
+[Your Name]";;path/to/resume1.pdf;;
+6;Decline;Frontend Developer;Full-Time;Home Depot / THD;;https://careers.homedepot.com/job/18351580/software-engineer-frontend-remote-atlanta-ga/?codes=1-INDEED;17.04.23;False;;;path/to/resume2.pdf;;
+7;Offer;DevOps Engineer;Full-Time;Leidos;;https://careers.leidos.com/jobs/12737601-devops-engineer?tm_job=R-00111032&tm_event=view&tm_company=2502;13.03.23;False;;;path/to/resume4.pdf;;
+8;Decline;DevOps Engineer;Full-Time;Kepora LLC;;;21.04.23;False;;;path/to/resume5.pdf;;Not enough experience
+9;Application Send;DevOps Engineer;Full-Time;Stress Engineering Services, Inc.;;https://careers-stress.icims.com/jobs/1677/job?utm_source=indeed_integration&iis=Job+Board&iisn=Indeed&indeed-apply-token=73a2d2b2a8d6d5c0a62696875eaebd669103652d3f0c2cd5445d3e66b1592b0f;08.04.23;True;"Dear Hiring Manager,
+
+I am excited to apply for the position of Digital Development Infrastructure Manager at SES. With my experience in operations and system administration, I am confident that I have the skills necessary to excel in this role.
+
+In my current position, I have built and managed development infrastructure, established and administered CI/CD pipelines for application deployment using Azure DevOps, and defined quality control and assurance policies for development efforts. I am proficient in scripting languages like Python, and have experience in version control, containers, orchestration, monitoring, and testing tools. Additionally, I have experience with AWS cloud administration, and a current understanding of best practices regarding system security measures.
+
+I am a certified DevOps professional and am well-versed in Agile and Lean methodologies. I am a strong communicator, have excellent teamwork skills, and am open-minded and adaptable to new technologies. I have a passion for producing quality output, and am interested in physics and physical sciences, making me a perfect fit for SES's vision of making a difference for our planet.
+
+I am excited about the opportunity to work with SES and to contribute to its mission. Thank you for considering my application. I look forward to hearing from you.
+
+Sincerely,
+[Your Name]";;path/to/resume5.pdf;;
