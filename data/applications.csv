@@ -1,4 +1,24 @@
 ;status;title;employmentType;company;jobPosting;link;date;coverAdded;coverText;coverPdf;resumePdf;mistakes;feedback
 0;Declined;Backend Developer;Other;fgfd;gfdgdfsg;fdgsdfg;2000-01-01;False;;;;dfgdfs;
 
+1;Application Sent;Backend Developer;Part-Time;messi;assistant;;2000-01-01;False;jzjkulu;;;r;uk
 1;Application Sent;Other;Other;;;;2000-01-01;False;;;;;
+3;Application Sent;DevOps Engineer;Part-Time;jk;hjk;;2000-01-01;False;hj;;;;
+4;Application Sent;DevOps Engineer;Part-Time;jk;hjk;;2000-01-01;False;hj;;;b;j
+5;Application Sent;DevOps Engineer;Part-Time;jk;hjk;;2000-01-01;False;hj;;;b;j
+6;Application Sent;DevOps Engineer;Part-Time;jk;hjk;;2000-01-01;False;hj;;;b;j
+7;Application Sent;DevOps Engineer;Part-Time;jk;hjk;;2000-01-01;False;hj;;;b;j
+8;Application Sent;DevOps Engineer;Part-Time;jk;hjk;;2000-01-01;False;hj;;;b;j
+9;Application Sent;DevOps Engineer;Part-Time;jk;hjk;;2000-01-01;False;hj;;;b;j
+10;Application Sent;DevOps Engineer;Part-Time;jk;hjk;;2000-01-01;False;hj;;;b;j
+11;Application Sent;DevOps Engineer;Part-Time;jk;hjk;;2000-01-01;True;hj;;;b;j
+12;Application Sent;DevOps Engineer;Part-Time;jk;hjk;;2000-01-01;True;hj;;;b;j
+13;Application Sent;DevOps Engineer;Part-Time;jk;hjk;;2000-01-01;True;hj;;;b;j
+14;Application Sent;DevOps Engineer;Part-Time;jk;hjk;;2000-01-01;True;hj;;;b;j
+15;Application Sent;DevOps Engineer;Part-Time;jk;hjk;;2000-01-01;True;hj;;;b;j
+16;Application Sent;DevOps Engineer;Part-Time;jk;hjk;;2000-01-01;True;hj;;;b;j
+17;Application Sent;DevOps Engineer;Part-Time;jk;hjk;;2000-01-01;True;hj;;;b;j
+18;Application Sent;DevOps Engineer;Part-Time;jk;hjk;;2000-01-01;True;hj;;;b;j
+19;Application Sent;DevOps Engineer;Part-Time;jk;hjk;;2000-01-01;True;hj;;;b;j
+20;Application Sent;DevOps Engineer;Part-Time;jk;hjk;;2000-01-01;True;hj;;;b;j
+21;Application Sent;DevOps Engineer;Part-Time;jk;hjk;;2000-01-01;True;hj;;;b;j
