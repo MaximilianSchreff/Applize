@@ -88,26 +88,24 @@ class AnalyseTab(QtWidgets.QWidget):
         plt.savefig('../data/plot1.png', bbox_inches='tight')
 
         # Table for resume numeration
-        count_resumes = data['resumePdf'].unique().shape[0]
-        resume_nr = np.array([])
-        for i in range(count_resumes):
-            resume_nr = np.append(resume_nr, 'r' + str(i + 1))
-        resume_nr = pd.Series(resume_nr, name='resume nr')
+        def get_pdf_name(path):
+            return path.split('/')[-1].split('.')[0]
 
-        resumes = pd.DataFrame(data['resumePdf'].unique(), columns=['path'])
-        # join the resume names with the resume pdfs
-        resumes = resumes.join(resume_nr)
-        # change the name in the data set to the resume nr
-        data = data.merge(resumes, how='left', left_on='resumePdf', right_on='path')
+        # Table for resume numeration
+        count_resumes = data['resumePdf'].unique()
+        pdf_name = np.array([])
 
-        sbchart1 = data.groupby('resume nr')['status'].value_counts()
+        # drop all nan values from the resumePdf column
+        data1 = data.dropna(subset=['resumePdf'])
+        # replace the path with the pdf name
+        data1['resumePdf'] = data1['resumePdf'].apply(get_pdf_name)
+
+        sbchart1 = data1.groupby('resumePdf')['status'].value_counts()
         # calcute the percentage of each status for each resume
         sbchart1 = sbchart1.groupby(level=0, group_keys=False).apply(lambda x: 100 * x / float(x.sum()))
         # create stacked bar chart
-
-        sbchart1.unstack().plot(kind='bar', stacked=True, rot=0, figsize=(breite, 3),
-                                title='Comparison of different resumes').legend(loc='upper right',
-                                                                                bbox_to_anchor=(1.2,1.2))
+        sbchart1.unstack().plot(kind='bar', stacked=True, rot=0, title='Comparison of different resumes',
+                                xlabel='').legend(loc='upper right', bbox_to_anchor=(1.14, 1.15))
         plt.savefig('../data/plot2.png', bbox_inches='tight')
 
         # compare the status distribution from cover letter and without cover letter
@@ -116,7 +114,7 @@ class AnalyseTab(QtWidgets.QWidget):
         sbchart2 = sbchart2.groupby(level=0, group_keys=False).apply(lambda x: 100 * x / float(x.sum()))
         # create stacked bar chart
         sbchart2.unstack().plot(kind='bar', stacked=True, title="Cover Letter VS No Cover Letter",
-                                rot=0, figsize=(breite, 3),).legend(loc='upper right', bbox_to_anchor=(1.2, 1.14))
+                                rot=0, figsize=(breite, 3),xlabel='').legend(loc='upper right', bbox_to_anchor=(1.2, 1.14))
         plt.savefig('../data/plot3.png', bbox_inches='tight')
 
         # status of the last 10 applications
