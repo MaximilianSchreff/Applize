@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from active import ActiveTab
 from InputTab import InputTab
 from analyse import AnalyseTab
-from recommend import RecommendTab
+from new_recommend import RecommendTab
 from data import applications
 
 
@@ -23,11 +23,18 @@ class Ui_MainWindow(object):
         MainWindow.resize(514, 307)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("*{\n"
-"    background-color: transparent;\n"
-"}\n"
-"#centralwidget{\n"
-"    background-color: #2a6f97;\n"
-"}\n")
+                                         "    background-color: transparent;\n"
+                                         "}\n"
+                                         "#centralwidget{\n"
+                                         "    background-color: #2a6f97;\n"
+                                         "}\n"
+                                         "QComboBox{\n"
+                                         "    background-color: #fff;\n"
+                                         "}\n"
+                                         "QPushButton{\n"
+                                         "    background-color: #a3cef1;\n"
+                                         "    border-radius: 10px;\n"
+                                         "}\n")
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -49,6 +56,7 @@ class Ui_MainWindow(object):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/icons/Icons/archive.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.tabWidget.addTab(self.tab_1, icon, "")
+        self.tab_1.load_app_list(applications)
 
         # Add New Tap
         self.tab_2 = InputTab()
