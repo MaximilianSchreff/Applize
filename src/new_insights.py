@@ -104,8 +104,11 @@ class AnalyseTab(QtWidgets.QWidget):
         # calcute the percentage of each status for each resume
         sbchart1 = sbchart1.groupby(level=0, group_keys=False).apply(lambda x: 100 * x / float(x.sum()))
         # create stacked bar chart
-        sbchart1.unstack().plot(kind='bar', stacked=True, rot=0, title='Comparison of different resumes',
+        if len(sbchart1) > 1:
+            sbchart1.unstack().plot(kind='bar', stacked=True, rot=0, title='Comparison of different resumes',
                                 xlabel='').legend(loc='upper right', bbox_to_anchor=(1.14, 1.15))
+        else:
+            sbchart1.plot(kind='bar', stacked=True, rot=0, title='Comparison of different resumes',xlabel='')
         plt.savefig('../data/plot2.png', bbox_inches='tight')
 
         # compare the status distribution from cover letter and without cover letter
