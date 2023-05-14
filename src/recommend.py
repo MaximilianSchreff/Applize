@@ -36,7 +36,6 @@ class RecommendTab(QtWidgets.QWidget):
 
         self.label.setGeometry(QtCore.QRect(370, 510, 200, 31))
 
-        self.label.setGeometry(QtCore.QRect(390, 510, 120, 31))
 
         self.font = QtGui.QFont()
         self.font.setFamily("Impact")
@@ -52,8 +51,6 @@ class RecommendTab(QtWidgets.QWidget):
 
         self.label_2.setGeometry(QtCore.QRect(420, 540, 91, 41))
 
-        self.label_2.setGeometry(QtCore.QRect(430, 540, 91, 41))
-
         self.font = QtGui.QFont()
         self.font.setFamily("Impact")
         self.font.setPointSize(20)
@@ -62,12 +59,8 @@ class RecommendTab(QtWidgets.QWidget):
         self.label_2.setObjectName("label_2")
         
         self.label_5 = QtWidgets.QLabel(self)
-        self.label_5.setGeometry(QtCore.QRect(570, 510, 200, 31))
+        self.label_5.setGeometry(QtCore.QRect(570, 510, 600, 31))
 
-        self.label_2.setObjectName("label_")
-
-        self.label_5 = QtWidgets.QLabel(self)
-        self.label_5.setGeometry(QtCore.QRect(570, 510, 120, 31))
 
         self.font = QtGui.QFont()
         self.font.setFamily("Impact")
@@ -81,9 +74,7 @@ class RecommendTab(QtWidgets.QWidget):
         self.label_5.setObjectName("label_5")
         self.label_6 = QtWidgets.QLabel(self)
 
-        self.label_6.setGeometry(QtCore.QRect(620, 540, 400, 41))
-
-        self.label_6.setGeometry(QtCore.QRect(610, 540, 91, 41))
+        self.label_6.setGeometry(QtCore.QRect(620, 540, 600, 41))
 
         self.font = QtGui.QFont()
         self.font.setFamily("Impact")
@@ -117,7 +108,7 @@ class RecommendTab(QtWidgets.QWidget):
         
         self.label_3.setText(self._translate("Form", "YOUR CV TEXT"))
         self.label_4.setText(self._translate("Form", "JOB DESCRIPTION"))
-        self.label_5.setText(self._translate("Form", "0%"))
+        self.label_5.setText(self._translate("Form", "SCORE: 0"))
         self.label_6.setText(self._translate("Form", "MATCHING WITH PAST JOB POSTINGS"))
         
         #Button clicked
@@ -136,14 +127,11 @@ class RecommendTab(QtWidgets.QWidget):
         if os.path.exists("../data/applications.csv"):
             df = pd.read_csv("../data/applications.csv", sep=";")
             job_postings = list(df["jobPosting"])
-            print(job_postings)
             for x in job_postings:
-                print(x)
                 if len(str(x)) < 1 or not isinstance(x, str):
                     job_postings.remove(x)
             
             if len(job_postings) > 0 :
-                print(job_postings)
                 average_score = 0
                 
                 for job_posting in job_postings:
@@ -153,8 +141,7 @@ class RecommendTab(QtWidgets.QWidget):
                     average_score += temp
                     
                 average_score /= len(job_postings)
-                print(average_score, cosine_scores)
                 self.label_5.setText(self._translate("Form", "Score: "+str(round(average_score,2))))
         
         self.label.setText(self._translate("Form", "Score: "+str(round(cosine_scores,2))))
-        self.label.setText(self._translate("Form", str(round(cosine_scores,2))+"%"))
+        self.label.setText(self._translate("Form", "Score: " +str(round(cosine_scores,2))))
