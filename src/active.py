@@ -70,7 +70,9 @@ class ActiveTab(QtWidgets.QWidget):
             numRows = self.tableWidget.rowCount()
             for i in range(numRows):
                 self.tableWidget.setRowHidden(i, False)  # show all rows
-    
+
+
+    #TODO: Überarbeiten, da sonst kein Einträge erstellt werden können
     def add_application(self, application: Application):
         # Create a empty row at bottom of table
         numRows = self.tableWidget.rowCount()
