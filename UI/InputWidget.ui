@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>564</width>
-    <height>379</height>
+    <height>98</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,9 +23,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>-760</y>
         <width>527</width>
-        <height>1168</height>
+        <height>1119</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
@@ -153,35 +153,7 @@
           <property name="verticalSpacing">
            <number>30</number>
           </property>
-          <item row="8" column="0">
-           <widget class="QLabel" name="CoverTextLabel">
-            <property name="text">
-             <string>Cover Letter Text</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="2">
-           <widget class="QLineEdit" name="JobTitleInput_2">
-            <property name="accessibleDescription">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="10" column="0">
-           <widget class="QLabel" name="ResumeLabel">
-            <property name="text">
-             <string>Resume</string>
-            </property>
-           </widget>
-          </item>
-          <item row="9" column="0">
-           <widget class="QLabel" name="CoverFileLabel">
-            <property name="text">
-             <string>Cover Letter File</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="2">
+          <item row="2" column="2">
            <widget class="QDateEdit" name="DateInput">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -203,51 +175,59 @@
             </property>
            </widget>
           </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="DateLabel">
+          <item row="2" column="3">
+           <widget class="QPushButton" name="DateTodayButton">
             <property name="text">
-             <string>Application Date</string>
+             <string>Today</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="JobTitleLabel_2">
-            <property name="minimumSize">
-             <size>
-              <width>118</width>
-              <height>0</height>
-             </size>
-            </property>
+          <item row="8" column="0">
+           <widget class="QLabel" name="CoverFileLabel">
             <property name="text">
-             <string>Job Title</string>
+             <string>Cover Letter File</string>
             </property>
            </widget>
           </item>
-          <item row="6" column="2">
+          <item row="5" column="2">
            <widget class="QCheckBox" name="CoverLetterInput">
             <property name="text">
              <string>Used</string>
             </property>
            </widget>
           </item>
-          <item row="6" column="0">
+          <item row="9" column="0">
+           <widget class="QLabel" name="ResumeLabel">
+            <property name="text">
+             <string>Resume</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
            <widget class="QLabel" name="CoverLetterLabel">
             <property name="text">
              <string>Cover Letter</string>
             </property>
            </widget>
           </item>
-          <item row="8" column="2" colspan="2">
-           <widget class="QPlainTextEdit" name="CoverTextInput">
-            <property name="accessibleDescription">
-             <string/>
+          <item row="7" column="0">
+           <widget class="QLabel" name="CoverTextLabel">
+            <property name="text">
+             <string>Cover Letter Text</string>
             </property>
            </widget>
           </item>
-          <item row="3" column="3">
-           <widget class="QPushButton" name="DateTodayButton">
+          <item row="2" column="0">
+           <widget class="QLabel" name="DateLabel">
             <property name="text">
-             <string>Today</string>
+             <string>Application Date</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="2" colspan="2">
+           <widget class="QPlainTextEdit" name="CoverTextInput">
+            <property name="accessibleDescription">
+             <string/>
             </property>
            </widget>
           </item>
