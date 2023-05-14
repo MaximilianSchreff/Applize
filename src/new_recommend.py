@@ -129,28 +129,31 @@ class RecommendTab(QtWidgets.QWidget):
             df = pd.read_csv("../data/applications.csv", sep=";")
             job_postings = list(df["jobPosting"])
             status = list(df["status"])
+            
+            correct_job_postings = [] 
+            correct_status = []
+            
             for i in range(len(job_postings)):
                 x = job_postings[i]
                 y = status[i]
-                if len(str(x)) < 1 or not isinstance(x, str):
-                    job_postings.remove(x)
-                    status.remove(y)
-
-            if len(job_postings) > 0:
+                if len(str(x)) > 0 and isinstance(x, str):
+                    correct_job_postings.append(x)
+                    correct_status.append(y)
+            
+            if len(correct_job_postings) > 0:
                 average_score = 0
 
-                for i in range(len(job_postings)):
-                    job_posting = job_postings[i]
+                for i in range(len(correct_job_postings)):
+                    job_posting = correct_job_postings[i]
 
-                    if status[i] == "Offer" or status[i] == "Declined":
+                    if correct_status[i] == "Offer" or correct_status[i] == "Declined":
                         embedding3 = self.model.encode(job_posting, convert_to_tensor=True)
-                        temp = util.pytorch_cos_sim(embedding1, embedding3)
+                        temp = util.pytorch_cos_sim(embedding2, embedding3)
                         temp = temp.item() * 100
                         temp = temp if status[i] == "Offer" else -temp
                         average_score += temp
 
                 average_score /= len(job_postings)
-                self.label_5.setText(self._translate("Form", "Score: " + str(round(average_score, 2))))
+                self.lineEdit_2.setText(self._translate("Form", "Score: " + str(round(average_score, 2))))
 
         self.lineEdit.setText(self._translate("Form", "Score: " + str(round(cosine_scores, 2))))
-        self.lineEdit_2.setText(self._translate("Form", "Score: " + str(round(cosine_scores, 2))))
