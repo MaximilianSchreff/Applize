@@ -11,39 +11,157 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import pandas as pd
 import numpy as np
-
+import matplotlib.pyplot as plt
+import os
 
 class AnalyseTab(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
-        layout = QtWidgets.QVBoxLayout(self)
+        #layout = QtWidgets.QVBoxLayout(self)
 
-        self.comboBox = QtWidgets.QComboBox()
-        self.comboBox.setGeometry(QtCore.QRect(70, 140, 73, 22))
-        self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-
-        _translate = QtCore.QCoreApplication.translate
-        self.comboBox.setItemText(0, _translate("analyse", "erste"))
-        self.comboBox.setItemText(1, _translate("analyse", "zweite"))
-        self.comboBox.setItemText(2, _translate("analyse", "dritte"))
-
-        layout.addWidget(self.comboBox)
-        self.comboBox.currentTextChanged.connect(self.combo_changed)
-
-        self.label = QtWidgets.QLabel()
-        self.label.setGeometry(QtCore.QRect(370, 50, 91, 16))
+        #self.resize(1124, 859)
+        #self.scrollArea = QtWidgets.QScrollArea(self)
+        #self.scrollArea.setGeometry(QtCore.QRect(10, 20, 1081, 821))
+        #self.scrollArea.setWidgetResizable(True)
+        #self.scrollArea.setObjectName("scrollArea")
+       # self.scrollAreaWidgetContents = QtWidgets.QWidget()
+        #self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 1079, 819))
+        #self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
+        #self.verticalScrollBar = QtWidgets.QScrollBar(self.scrollAreaWidgetContents)
+        #self.verticalScrollBar.setGeometry(QtCore.QRect(1060, 310, 16, 160))
+        #self.verticalScrollBar.setOrientation(QtCore.Qt.Vertical)
+        #self.verticalScrollBar.setObjectName("verticalScrollBar")
+        self.tableWidget = QtWidgets.QTableWidget(self)
+        self.tableWidget.setGeometry(QtCore.QRect(390, 750, 256, 192))
+        self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setColumnCount(2)
+        self.tableWidget.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(1, item)
+        self.label = QtWidgets.QLabel(self)
+        self.label.setGeometry(QtCore.QRect(100, -40, int(480*1.2), int(360*1.2)))
+        self.label.setText("")
         self.label.setObjectName("label")
-        self.label_2 = QtWidgets.QLabel()
-        self.label_2.setGeometry(QtCore.QRect(360, 310, 411, 20))
+        self.label_2 = QtWidgets.QLabel(self)
+        self.label_2.setGeometry(QtCore.QRect(700, -53, int(480*1.2), int(360*1.2)))
+        self.label_2.setText("")
         self.label_2.setObjectName("label_2")
-        self.label.setText(_translate("analyse", "analyse setion"))
-        self.label_2.setText(_translate("analyse", "Hier kommt hin was man auswählt"))
+        self.label_3 = QtWidgets.QLabel(self)
+        self.label_3.setGeometry(QtCore.QRect(100, 330, int(480*1.2), int(360*1.2)))
+        self.label_3.setText("")
+        self.label_3.setObjectName("label_3")
+        self.label_4 = QtWidgets.QLabel(self)
+        self.label_4.setGeometry(QtCore.QRect(700, 330, int(480*1.2), int(360*1.2)))
+        self.label_4.setText("")
+        self.label_4.setObjectName("label_4")
+        #self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
-        layout.addWidget(self.label)
-        layout.addWidget(self.label_2)
 
-    def combo_changed(self):
-        self.label_2.setText(self.comboBox.currentText())
+        QtCore.QMetaObject.connectSlotsByName(self)
+        _translate = QtCore.QCoreApplication.translate
+        item = self.tableWidget.horizontalHeaderItem(0)
+        item.setText(_translate("analyse", "Neue Spalte"))
+        item = self.tableWidget.horizontalHeaderItem(1)
+        item.setText(_translate("analyse", "Resume Nr"))
+
+
+    def clicked(self):
+        if not os.path.exists('../data/applications.csv'):
+            print("No data available. Please import data first.")
+        # Get matplotlib Plots and save as jgs
+
+        data = pd.read_csv('../data/applications.csv', encoding='utf-8', sep=';')
+
+        #if len(data)
+        #TODO: explode abhänig von parametern machen
+        #Farben später einbauen
+
+        #colors1 = ['#ffcc99', '#ff9999', '#66b3ff', '#99ff99']
+        #colors2 = ['#ffcc99', '#66b3ff', '#99ff99', '#ff9999']
+        groesse = 3
+        breite = 5
+        # pie chart to see how many applications have been accepted, rejected or are still pending
+        status = data['status']
+        plt.figure()
+        csfont = {'fontname': 'Arial'}
+        print(status.value_counts())
+        status.value_counts().plot(kind='pie', figsize=(8, 4), autopct='%1.0f%%')
+        plt.title('All-Time Overview', **csfont)
+        plt.savefig('../data/plot1.png', bbox_inches='tight')
+
+        # Table for resume numeration
+        count_resumes = data['resumePdf'].unique().shape[0]
+        resume_nr = np.array([])
+        for i in range(count_resumes):
+            resume_nr = np.append(resume_nr, 'r' + str(i + 1))
+        resume_nr = pd.Series(resume_nr, name='resume nr')
+
+        resumes = pd.DataFrame(data['resumePdf'].unique(), columns=['path'])
+        # join the resume names with the resume pdfs
+        resumes = resumes.join(resume_nr)
+        # change the name in the data set to the resume nr
+        data = data.merge(resumes, how='left', left_on='resumePdf', right_on='path')
+
+        sbchart1 = data.groupby('resume nr')['status'].value_counts()
+        # calcute the percentage of each status for each resume
+        sbchart1 = sbchart1.groupby(level=0, group_keys=False).apply(lambda x: 100 * x / float(x.sum()))
+        # create stacked bar chart
+
+        sbchart1.unstack().plot(kind='bar', stacked=True, rot=0, figsize=(breite, 3),
+                                title='Comparison of different resumes').legend(loc='upper right',
+                                                                                bbox_to_anchor=(1.2,1.2))
+        plt.savefig('../data/plot2.png', bbox_inches='tight')
+
+        # compare the status distribution from cover letter and without cover letter
+        sbchart2 = data.groupby('coverAdded')['status'].value_counts()
+        # calcute the percentage of each status for cover letter vs no cover letter
+        sbchart2 = sbchart2.groupby(level=0, group_keys=False).apply(lambda x: 100 * x / float(x.sum()))
+        # create stacked bar chart
+        sbchart2.unstack().plot(kind='bar', stacked=True, title="Cover Letter VS No Cover Letter",
+                                rot=0, figsize=(breite, 3),).legend(loc='upper right', bbox_to_anchor=(1.2, 1.14))
+        plt.savefig('../data/plot3.png', bbox_inches='tight')
+
+        # status of the last 10 applications
+        lastTenAp = data.sort_values(by='date', ascending=True)
+        lastTenAp = lastTenAp.head(10)
+        lastTenAp = lastTenAp['status']
+        plt.figure()
+        csfont = {'fontname': 'Arial'}
+        lastTenAp.value_counts().plot(kind='bar', rot=0, figsize=(6, 3.5))
+        plt.title('Status of the last 10 applications', **csfont)
+        plt.savefig('../data/plot4.png', bbox_inches='tight')
+
+        # Get the plots and show them in the Graphic Widgets
+        #self.graphicsView.scene().clear()
+        #self.graphicsView.scene().addPixmap(QtGui.QPixmap('../data/plot1.png'))
+        #self.graphicsView.show()
+
+        self.label.setPixmap(QtGui.QPixmap('../data/plot1.png'))
+        self.label.show()
+
+        #self.graphicsView_2.scene().clear()
+        #self.graphicsView_2.scene().addPixmap(QtGui.QPixmap('../data/plot2.png'))
+        #self.graphicsView_2.show()
+
+        self.label_2.setPixmap(QtGui.QPixmap('../data/plot2.png'))
+        self.label_2.show()
+        #self.graphicsView_3.scene().clear()
+        #self.graphicsView_3.scene().addPixmap(QtGui.QPixmap('../data/plot3.png'))
+        #self.graphicsView_3.show()
+
+        self.label_3.setPixmap(QtGui.QPixmap('../data/plot3.png'))
+        self.label_3.show()
+
+        #self.graphicsView_4.scene().clear()
+        #self.graphicsView_4.scene().addPixmap(QtGui.QPixmap('../data/plot4.png'))
+        #self.graphicsView_4.show()
+
+        self.label_4.setPixmap(QtGui.QPixmap('../data/plot4.png'))
+        self.label_4.show()
+        """
+"""
+
+
+

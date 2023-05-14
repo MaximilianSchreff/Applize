@@ -20,7 +20,7 @@ from data import applications
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1143, 698)
+        MainWindow.resize(1280, 720)
         font = QtGui.QFont()
         font.setFamily("Calibri")
         font.setPointSize(8)
@@ -33,7 +33,7 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
-        self.tabWidget.setGeometry(QtCore.QRect(0, 10, 1141, 651))
+        self.tabWidget.setGeometry(QtCore.QRect(0, 10, 1280, 720))
         self.tabWidget.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.tabWidget.setStyleSheet("font: 75 14pt \"Calibri\";")
         self.tabWidget.setTabPosition(QtWidgets.QTabWidget.West)
@@ -64,6 +64,8 @@ class Ui_MainWindow(object):
         self.tab_5 = AnalyseTab()
         self.tab_5.setObjectName("tab_5")
         self.tabWidget.addTab(self.tab_5, "")
+        #Analyse selected, onclick
+        self.tabWidget.currentChanged.connect(self.tab_clicked)
         
         #Recommendation
         self.tab_6 = RecommendTab()
@@ -92,3 +94,10 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), _translate("MainWindow", "Analyse"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_6), _translate("MainWindow", "Recommendation"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_7), _translate("MainWindow", "Settings"))
+
+    def tab_clicked(self):
+        #Check ha tab_5 is selected
+        if self.tabWidget.currentIndex() == 2:
+            print("Analyse tab selected")
+            self.tab_5.clicked()
+        #messi goat

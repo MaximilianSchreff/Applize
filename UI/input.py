@@ -247,3 +247,7 @@ class Ui_MainWindow(object):
         self.comboBox_2.setItemText(3, _translate("MainWindow", "Intership"))
         self.comboBox_2.setItemText(4, _translate("MainWindow", "Working Student"))
         self.comboBox_2.setItemText(5, _translate("MainWindow", "Scholarship"))
+
+
+
+

@@ -6,63 +6,120 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1103</width>
-    <height>855</height>
+    <width>1124</width>
+    <height>859</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QScrollArea" name="scrollArea">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>140</y>
-     <width>73</width>
-     <height>22</height>
+     <x>10</x>
+     <y>20</y>
+     <width>1081</width>
+     <height>821</height>
     </rect>
    </property>
-   <item>
-    <property name="text">
-     <string>erste</string>
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1079</width>
+      <height>819</height>
+     </rect>
     </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>zweite</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>dritte</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>370</x>
-     <y>50</y>
-     <width>91</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>analyse setion</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>360</x>
-     <y>310</y>
-     <width>411</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Hier kommt hin was man auswählt</string>
-   </property>
+    <widget class="QScrollBar" name="verticalScrollBar">
+     <property name="geometry">
+      <rect>
+       <x>1060</x>
+       <y>310</y>
+       <width>16</width>
+       <height>160</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="tableWidget">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>750</y>
+       <width>256</width>
+       <height>192</height>
+      </rect>
+     </property>
+     <column>
+      <property name="text">
+       <string>Neue Spalte</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Resume Nr</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>480</width>
+       <height>360</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>10</y>
+       <width>480</width>
+       <height>360</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>360</y>
+       <width>480</width>
+       <height>360</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>360</y>
+       <width>480</width>
+       <height>360</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <resources/>
